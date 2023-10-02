@@ -2,13 +2,12 @@ version: '3'
 
 services:
   webserver:
-    image: nginx:latest
+    build: .
     ports:
       - 80:80
       - 443:443
     restart: always
     volumes:
-      - ./nginx/conf/:/etc/nginx/conf.d/
       - certbot_www:/var/www/certbot/:ro
       - certbot_conf:/etc/nginx/ssl/:ro
 
