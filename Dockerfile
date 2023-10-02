@@ -1,2 +1,2 @@
 FROM nginx:latest
-COPY app.config /etc/nginx/conf.d/app.config
+COPY app.conf /etc/nginx/conf.d/app.config
