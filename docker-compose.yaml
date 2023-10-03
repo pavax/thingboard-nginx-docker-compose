@@ -10,6 +10,7 @@ services:
     environment:
       - DOMAIN=$DOMAIN
       - EMAIL=$EMAIL
+      - TARGET_URL=$TARGET_URL
     volumes:
       - certbot_www:/var/www/certbot/
       - certbot_conf:/etc/nginx/ssl/
