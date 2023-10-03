@@ -13,7 +13,7 @@ services:
 
   certbot:
     image: certbot/certbot:latest
-    command: certonly --webroot --webroot-path=/var/www/certbot --email patrick.dobler@gmail.com --agree-tos --no-eff-email -d thingsboard.pavax.ch
+    command: certonly --webroot --webroot-path=/var/www/certbot --email patrick.dobler@gmail.com --keep-until-expiry  --agree-tos --no-eff-email -d thingsboard.pavax.ch
     volumes:
       - certbot_www:/var/www/certbot/:rw
       - certbot_conf:/etc/letsencrypt/:rw
