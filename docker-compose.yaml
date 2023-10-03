@@ -26,4 +26,6 @@ services:
       - certbot_conf:/etc/letsencrypt/
 
 volumes:
+    certbot_conf:
+       external: true
     certbot_www:
