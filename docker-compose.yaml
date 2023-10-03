@@ -8,15 +8,15 @@ services:
       - 443:443
     restart: always
     volumes:
-      - certbot_www:/var/www/certbot/:ro
-      - certbot_conf:/etc/nginx/ssl/:ro
+      - certbot_www:/var/www/certbot/
+      - certbot_conf:/etc/nginx/ssl/
 
   certbot:
     image: certbot/certbot:latest
     command: certonly --webroot --webroot-path=/var/www/certbot --email patrick.dobler@gmail.com --force-renewal --agree-tos --no-eff-email -d thingsboard.pavax.ch
     volumes:
-      - certbot_www:/var/www/certbot/:rw
-      - certbot_conf:/etc/letsencrypt/:rw
+      - certbot_www:/var/www/certbot/
+      - certbot_conf:/etc/letsencrypt/
 volumes:
     certbot_conf:
     certbot_www:
