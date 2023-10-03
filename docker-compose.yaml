@@ -2,7 +2,7 @@ version: '3'
 
 services:
   webserver:
-    build: .
+    build: . 
     ports:
       - 80:80
       - 443:443
@@ -13,7 +13,7 @@ services:
 
   certbot:
     image: certbot/certbot:latest
-    command: certonly --webroot --webroot-path=/var/www/certbot --email patrick.dobler@gmail.com --force-renewal --agree-tos --no-eff-email -d thingsboard.pavax.ch
+    command: certonly --webroot --webroot-path=/var/www/certbot --cert-name thingsboard.pavax.ch --email patrick.dobler@gmail.com --force-renewal --agree-tos --no-eff-email -d thingsboard.pavax.ch
     volumes:
       - certbot_www:/var/www/certbot/
       - certbot_conf:/etc/letsencrypt/
