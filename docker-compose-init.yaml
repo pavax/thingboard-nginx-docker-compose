@@ -8,7 +8,8 @@ services:
       - 443:443
     restart: always
     environment:
-      - DOMAIN=thingsboard2.pavax.ch
+      - DOMAIN=$DOMAIN
+      - EMAIL=$EMAIL
     volumes:
       - certbot_www:/var/www/certbot/
       - certbot_conf:/etc/nginx/ssl/
@@ -19,8 +20,8 @@ services:
      - webserver-init
     command: >- 
              certonly --reinstall --webroot --webroot-path=/var/www/certbot
-             --email patrick.dobler@gmail.com --agree-tos --no-eff-email
-             -d thingsboard2.pavax.ch
+             --email $EMAIL --agree-tos --no-eff-email
+             -d $DOMAIN
     volumes:
       - certbot_www:/var/www/certbot/
       - certbot_conf:/etc/letsencrypt/
